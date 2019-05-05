@@ -9,30 +9,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/plus"
-            android:layout_width="50dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="226dp"
+            android:layout_marginTop="202dp"
             android:layout_marginEnd="9dp"
             android:layout_marginRight="9dp"
-            android:text="+" />
+            android:src="@drawable/plus" />
 
-        <Button
+        <ImageButton
             android:id="@+id/minus"
-            android:layout_width="50dp"
-            android:layout_height="32dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="258dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:text="-" />
+            android:src="@drawable/minus"/>
+
+        <ImageButton
+            android:id="@+id/routing"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="19dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginBottom="128dp"
+            android:src="@drawable/routing"/>
+
     </com.yandex.mapkit.mapview.MapView>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,10 +65,117 @@
             android:id="@+id/suggest_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
             android:background="@color/colorPrimary"
             android:cacheColorHint="@color/colorPrimary"
-            android:divider="@color/colorAccent" />
+            android:divider="@color/colorAccent"
+            android:visibility="invisible" />
 
     </LinearLayout>
+
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Пункт отправления"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/from_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <ListView
+                android:id="@+id/from_suggest_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:cacheColorHint="@color/colorPrimary"
+                android:divider="@color/colorAccent"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Пункт назначения"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/to_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <ListView
+                android:id="@+id/to_suggest_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:cacheColorHint="@color/colorPrimary"
+                android:divider="@color/colorAccent"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/mistake_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/ok_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="339dp"
+                    android:text="Проложить маршрут"
+                    android:textColor="@color/colorPrimary" />
+
+                <Button
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="339dp"
+                    android:text="Назад"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
 </RelativeLayout>
+
+
+
